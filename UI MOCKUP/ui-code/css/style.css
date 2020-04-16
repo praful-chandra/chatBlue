@@ -1,278 +1,354 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html{
-    font-size: 62.5%;
+html {
+  font-size: 62.5%;
 }
 
 nav {
-    background-color: #1C77C3;
-    width: 100%;
-    height: 8rem;
-    text-align: center;
-    font-family: 'Bebas Neue', cursive;
-    padding-top: 0.7rem;
+  background-color: #1c77c3;
+  width: 100%;
+  height: 8rem;
+  text-align: center;
+  font-family: "Bebas Neue", cursive;
+  padding-top: 0.7rem;
 }
 
 nav span {
-    color: #fff;
-    font-size: 5.3rem;
-
+  color: #fff;
+  font-size: 5.3rem;
 }
 
-.loginBox{
-    width: 52.6rem;
-    height: 50rem;
-    margin: 15rem auto;
-    background-color: #D6EFFF;
+.loginBox {
+  width: 52.6rem;
+  height: 50rem;
+  margin: 15rem auto;
+  background-color: #d6efff;
 }
 
-.loginBody{
-    width: 100%;
-    height: 100%;
-
+.loginBody {
+  width: 100%;
+  height: 100%;
 }
 
-.loginBody form *{
-    display: block;
-    margin: 5rem auto;
-    font-family: 'Bebas Neue', cursive;
-
+.loginBody form * {
+  display: block;
+  margin: 5rem auto;
+  font-family: "Bebas Neue", cursive;
 }
 
-.loginBody form input{
-    width: 37.8rem;
-    height: 7.4rem;
-    background-color: #fff;
-    border: none;
-    border-radius: 50px;
-    font-size: 3rem;
-    padding-left: 5rem;
-    padding-right: 2rem;
+.loginBody form input {
+  width: 37.8rem;
+  height: 7.4rem;
+  background-color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 3rem;
+  padding-left: 5rem;
+  padding-right: 2rem;
 }
 
-.loginBody form button{
-    width: 13.2rem;
-    height: 7.2rem;
-    background-color: #1C77C3;
-    color: #fff;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    font-size: 4.1rem;
-    cursor: pointer;
+.loginBody form button {
+  width: 13.2rem;
+  height: 7.2rem;
+  background-color: #1c77c3;
+  color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 4.1rem;
+  cursor: pointer;
+}
+.leftBar {
+  float: left;
+  width: 20%;
+  height: 90vh;
+  background-color: #495867;
+  font-family: "Bebas Neue", cursive;
 }
 
-.chatbody{
-    width: 94.6rem;
-    height: 80vh;
-    background-color: #D6EFFF;
-    margin: 5rem auto;
-    position: relative;
-    border-radius: 50px;
+.leftHeading{
+  color: #fff;
+  font-size: 5.3rem;
+
+  text-align: center;
+}
+
+.loggedUser{
+  height: 100%;
+  overflow: scroll;
+  padding-top: 3rem;
+  padding-left: 5rem;
+}
+
+.loggedUserIcon{
+  float: left;
+  
+}
+.loggedUserIcon img{
+  width:  5rem;
+  margin-right: 2rem;
+}
+.loggedUserName{
+  float: left;
+  color: #fff;
+  font-size: 4rem;
+}
+
+.rightBody {
+  float: right;
+  width: 80%;
+  height: 90vh;
+}
+.chatbody {
+  margin: 2rem auto;
+  width: 80%;
+  height: 90%;
+  background-color: #d6efff;
+  border-radius: 50px;
 }
 ::-webkit-scrollbar {
-    width: 0px;
-  }
-
-.chatcontent{
-    width: 80%;
-    height: 90%;
-    margin: 0 auto;
-    overflow: scroll;
-    
+  width: 0px;
 }
 
-
-.chat{
-    width: 80%;
-    height: 8.9rem;
-    background-color: rgba(28, 120, 195, 0.308);  
-    margin: 2rem auto;
-    border-radius: 10px;
-}
-.chat::after{
-    content: "";
-    display: table;
-    float: none;
-}
-.chatuser{
-    float: left;
-    width: 20%;
-    height: 100%;
-    background-color: #495867;
-    border-radius: 10px 0 0 10px;
-    color: #fff;
-    text-align: center;
-    padding-top: 0.5rem;
+.chatcontent {
+  width: 80%;
+  height: 90%;
+  margin: 0 auto;
+  overflow: scroll;
 }
 
-.chatuser span{
-    display: block;
-font-size: 1.8rem;
-margin-top: 1rem;
+.chat {
+  width: 80%;
+  height: 8.9rem;
+  background-color: rgba(28, 120, 195, 0.308);
+  margin: 2rem auto;
+  border-radius: 10px;
+}
+.chat::after {
+  content: "";
+  display: table;
+  float: none;
+}
+.chatuser {
+  float: left;
+  width: 20%;
+  height: 100%;
+  background-color: #495867;
+  border-radius: 10px 0 0 10px;
+  color: #fff;
+  text-align: center;
+  padding-top: 0.5rem;
 }
 
-.chatmessage{
-    padding:1%;
-    width: 80%;
-    height: 100%;
-    float: right;
-    color: #495867;
-    font-size: 2rem;
-    overflow: scroll;
+.chatuser span {
+  display: block;
+  font-size: 1.8rem;
+  margin-top: 1rem;
 }
 
-.chataction{
-    width: 80%;
-    height: 10%;
-    margin: 0 auto;
-}
-.chataction *{
-    display: inline-block;
-}
-
-.chataction input{
-    width: 90%;
-    height: 80%;
-    border: none;
-    outline: none;
-    border-radius: 30px;
-    padding-left: 5rem;
-    font-size: 1.4rem;
-    color: #495867;
-    float: left;
+.chatmessage {
+  padding: 1%;
+  width: 80%;
+  height: 100%;
+  float: right;
+  color: #495867;
+  font-size: 2rem;
+  overflow: scroll;
 }
 
-
-.chataction button{
-    background-color: transparent;
-    border: none;
-    outline: none;
-    padding: 1rem;
-    float: right;
-    cursor: pointer;
+.chataction {
+  width: 80%;
+  height: 10%;
+  margin: 0 auto;
 }
-.chataction button img{
-    color: #495867;
-    width: 4rem;
-    height: 4rem;
+.chataction * {
+  display: inline-block;
 }
 
+.chataction input {
+  width: 90%;
+  height: 80%;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  padding-left: 5rem;
+  font-size: 1.4rem;
+  color: #495867;
+  float: left;
+}
 
-
-
-
-
-
-
+.chataction button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  float: right;
+  cursor: pointer;
+}
+.chataction button img {
+  color: #495867;
+  width: 4rem;
+  height: 4rem;
+}
 
 @media only screen and (max-width: 1903px) {
-    html {
-      font-size: 62%; } }
-  
-  @media only screen and (max-width: 1852px) {
-    html {
-      font-size: 61%; } }
-  
-  @media only screen and (max-width: 1818px) {
-    html {
-      font-size: 60%; } }
-  
-  @media only screen and (max-width: 1790px) {
-    html {
-      font-size: 59%; } }
-  
-  @media only screen and (max-width: 1759px) {
-    html {
-      font-size: 58%; } }
-  
-  @media only screen and (max-width: 1728px) {
-    html {
-      font-size: 57%; } }
-  
-  @media only screen and (max-width: 1700px) {
-    html {
-      font-size: 56%; } }
-  
-  @media only screen and (max-width: 1670px) {
-    html {
-      font-size: 55%; } }
-  
-  @media only screen and (max-width: 1640px) {
-    html {
-      font-size: 54%; } }
-  
-  @media only screen and (max-width: 1610px) {
-    html {
-      font-size: 53%; } }
-  
-  @media only screen and (max-width: 1584px) {
-    html {
-      font-size: 52%; } }
-  
-  @media only screen and (max-width: 1553px) {
-    html {
-      font-size: 51%; } }
-  
-  @media only screen and (max-width: 1520px) {
-    html {
-      font-size: 50%; } }
-  
-  @media only screen and (max-width: 1495px) {
-    html {
-      font-size: 49%; } }
-  
-  @media only screen and (max-width: 1463px) {
-    html {
-      font-size: 48%; } }
-  
-  @media only screen and (max-width: 1432px) {
-    html {
-      font-size: 47%; } }
-  
-  @media only screen and (max-width: 1400px) {
-    html {
-      font-size: 46%; } }
-  
-  @media only screen and (max-width: 1370px) {
-    html {
-      font-size: 45%; } }
-  
-  @media only screen and (max-width: 1345px) {
-    html {
-      font-size: 44%; } }
-  
-  @media only screen and (max-width: 1313px) {
-    html {
-      font-size: 43%; } }
-  
-  @media only screen and (max-width: 1281px) {
-    html {
-      font-size: 42%; } }
-  
-  @media only screen and (max-width: 1252px) {
-    html {
-      font-size: 41%; } }
-  
-  @media only screen and (max-width: 1230px) {
-    html {
-      font-size: 40%; } }
-  
-  @media only screen and (max-width: 1194px) {
-    html {
-      font-size: 39%; } }
-  
-  @media only screen and (max-width: 1162px) {
-    html {
-      font-size: 38%; } }
-  
-  @media only screen and (max-width: 1120px) {
-    html {
-      font-size: 35%; } }
-  
+  html {
+    font-size: 62%;
+  }
+}
+
+@media only screen and (max-width: 1852px) {
+  html {
+    font-size: 61%;
+  }
+}
+
+@media only screen and (max-width: 1818px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media only screen and (max-width: 1790px) {
+  html {
+    font-size: 59%;
+  }
+}
+
+@media only screen and (max-width: 1759px) {
+  html {
+    font-size: 58%;
+  }
+}
+
+@media only screen and (max-width: 1728px) {
+  html {
+    font-size: 57%;
+  }
+}
+
+@media only screen and (max-width: 1700px) {
+  html {
+    font-size: 56%;
+  }
+}
+
+@media only screen and (max-width: 1670px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media only screen and (max-width: 1640px) {
+  html {
+    font-size: 54%;
+  }
+}
+
+@media only screen and (max-width: 1610px) {
+  html {
+    font-size: 53%;
+  }
+}
+
+@media only screen and (max-width: 1584px) {
+  html {
+    font-size: 52%;
+  }
+}
+
+@media only screen and (max-width: 1553px) {
+  html {
+    font-size: 51%;
+  }
+}
+
+@media only screen and (max-width: 1520px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 1495px) {
+  html {
+    font-size: 49%;
+  }
+}
+
+@media only screen and (max-width: 1463px) {
+  html {
+    font-size: 48%;
+  }
+}
+
+@media only screen and (max-width: 1432px) {
+  html {
+    font-size: 47%;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  html {
+    font-size: 46%;
+  }
+}
+
+@media only screen and (max-width: 1370px) {
+  html {
+    font-size: 45%;
+  }
+}
+
+@media only screen and (max-width: 1345px) {
+  html {
+    font-size: 44%;
+  }
+}
+
+@media only screen and (max-width: 1313px) {
+  html {
+    font-size: 43%;
+  }
+}
+
+@media only screen and (max-width: 1281px) {
+  html {
+    font-size: 42%;
+  }
+}
+
+@media only screen and (max-width: 1252px) {
+  html {
+    font-size: 41%;
+  }
+}
+
+@media only screen and (max-width: 1230px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media only screen and (max-width: 1194px) {
+  html {
+    font-size: 39%;
+  }
+}
+
+@media only screen and (max-width: 1162px) {
+  html {
+    font-size: 38%;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  html {
+    font-size: 35%;
+  }
+}

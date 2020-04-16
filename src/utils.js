@@ -20,8 +20,13 @@ exitUser = (id)=>{
     }
 }
 
+getRoomUsers = (room)=>{
+    return users.filter((usr)=>usr.room === room)
+}
+
 module.exports={
     joinUser,
     getUser,
-    exitUser
+    exitUser,
+    getRoomUsers
 }

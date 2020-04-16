@@ -11,7 +11,7 @@ const publicFolder = path.join(__dirname, "../public");
 
 const io = socket(server);
 
-const { joinUser,getUser,exitUser } = require("./utils");
+const { joinUser,getUser,exitUser ,getRoomUsers} = require("./utils");
 
 const formtMsg = (name, message) => {
   return {
@@ -24,6 +24,7 @@ const formtMsg = (name, message) => {
 
 io.on("connection", (socket) => {
   socket.on("login", (member) => {
+    
     socket.emit("message", formtMsg("BOT", "welcome to chatapp"));
 
     const user = joinUser(socket.id, member.name, member.roomId);
@@ -32,6 +33,10 @@ io.on("connection", (socket) => {
     socket.broadcast
       .to(user.room)
       .emit("message", formtMsg("BOT", `${user.name} has joined`));
+
+    
+      io.to(user.room).emit("members",getRoomUsers(user.room))
+
   });
 
   socket.on("send",(message)=>{
@@ -45,7 +50,12 @@ io.on("connection", (socket) => {
     const user = exitUser(socket.id);
     if(user){
       io.to(user.room).emit("message",formtMsg("BOT", `${user.name} has Left`))
+   
+      
+      io.to(user.room).emit("members",getRoomUsers(user.room))
     }
+    
+
   })
   
 });

@@ -8,17 +8,32 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body onload="onLoad()">
-    <nav><span>Room : <span id="room"></span></span></nav>
-    <div class="chatbody">
-      <div class="chatcontent" id="chatBody">
-        
+    <nav>
+      <span>Room : <span id="room"></span></span>
+    </nav>
+    <div class="leftBar">
+      <div class="leftHeading">Users</div>
+      <div class="listOfUsers" id="loggedInUsers" > 
+        <div></div>
       </div>
-      <div class="chataction">
-          <input type="text" name="message" id="message" placeholder="type your message">
-          <button><img src="./send.svg" alt="" srcset="" onclick="sendMsg()"></button>
+    </div>
+    <div class="rightBody">
+      <div class="chatbody">
+        <div class="chatcontent" id="chatBody"></div>
+        <div class="chataction">
+          <input
+            type="text"
+            name="message"
+            id="message"
+            placeholder="type your message"
+          />
+          <button>
+            <img src="./send.svg" alt="" srcset="" onclick="sendMsg()" />
+          </button>
+        </div>
       </div>
     </div>
   </body>
   <script src="/socket.io/socket.io.js"></script>
-<script src="./js/message.js"></script>
+  <script src="./js/message.js"></script>
 </html>
