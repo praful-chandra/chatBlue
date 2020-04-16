@@ -29,7 +29,9 @@ socket.on("message", (data) => {
 
     `;
 
-  document.getElementById("chatBody").appendChild(div);
+  const chatBody = document.getElementById("chatBody");
+  chatBody.appendChild(div);
+  chatBody.scrollTop = chatBody.scrollHeight;
 });
 
 sendMsg = () => {
