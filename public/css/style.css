@@ -114,8 +114,9 @@ nav span {
 
 .chatuser span{
     display: block;
-font-size: 1.8rem;
+font-size: 2rem;
 margin-top: 1rem;
+text-align: center;
 }
 
 .chatmessage{

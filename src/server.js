@@ -11,46 +11,49 @@ const publicFolder = path.join(__dirname, "../public");
 
 const io = socket(server);
 
+const { joinUser,getUser,exitUser } = require("./utils");
 
-const {joinUser} = require("./utils");
-
-const formtMsg = (name , message) =>{
+const formtMsg = (name, message) => {
   return {
-    name ,
-    message
-  }
-}
+    name,
+    message,
+    
+  };
+};
 
-const rooms = [];
 
 io.on("connection", (socket) => {
- socket.on("login",(member)=>{
- 
-  socket.emit("message",formtMsg("BOT","welcome to chatapp"))
+  socket.on("login", (member) => {
+    socket.emit("message", formtMsg("BOT", "welcome to chatapp"));
 
-  const user = joinUser(socket.id,member.name,member.roomId);
+    const user = joinUser(socket.id, member.name, member.roomId);
 
+    socket.join(user.room);
+    socket.broadcast
+      .to(user.room)
+      .emit("message", formtMsg("BOT", `${user.name} has joined`));
+  });
 
-  console.log(user);
-  
-
-  socket.join(user.roomId);
-
- socket.broadcast.to(user.room).emit("message",formtMsg("BOT",`${user.name} has joined`))
+  socket.on("send",(message)=>{
+    const user = getUser(socket.id);
+    
+    io.to(user.room).emit("message",formtMsg(user.name,message))
    
- })
+  })
 
-
- socket.on('disconnect',(socket)=>{
-  socket.broadcast.to(user.roomId).emit("message",formtMsg("BOT",`${user.name} has Left`))
- })
+  socket.on('disconnect',()=>{
+    const user = exitUser(socket.id);
+    if(user){
+      io.to(user.room).emit("message",formtMsg("BOT", `${user.name} has Left`))
+    }
+  })
   
-
 });
 
 app.use(express.static(publicFolder));
 
-server.listen(3000, () => {
+const port = process.env.PORT || 3000
+server.listen(port, () => {
   console.log("listening on port 3000");
 });
 
